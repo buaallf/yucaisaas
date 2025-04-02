@@ -25,6 +25,7 @@
 
   <modules>
     <module>yucaisaas-member</module>
+    <module>yucaisaas-promotion</module>
   </modules>
 
 </project>
