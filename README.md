@@ -4,11 +4,7 @@
 
 ## 一、项目介绍
 
-<<<<<<< HEAD
-本仓库包括以下两个独立模块：
-=======
 该平台致力于为中小型企业提供灵活、高效的业务支撑服务。本仓库包括以下两个独立模块：
->>>>>>> yucaisaas/master
 
 - `yucaisaas-member`：会员管理模块，支持会员注册、登录、信息维护、等级管理等功能。
 - `yucaisaas-promotion`：活动促销模块，支持营销活动配置、优惠规则管理、活动投放与统计分析等功能。
@@ -30,42 +26,38 @@
 
 每个模块为独立 Spring Boot 项目，可独立部署或集成部署。
 
-### 2.3 运行方法（以 yucaisaas 示例服务为例）
+### 2.3 运行方法（以 Payslip 示例服务为例）
 
-> ⚠️ 注意：以下为平台内的演示服务模块说明（yucaisaas），可作为参考测试流程。
+> ⚠️ 注意：以下为平台内的演示服务模块说明（Payslip），可作为参考测试流程。
 
 A. 确保本地已安装 **Microsoft .NET 5.0 SDK**  
-B. 首次运行 `yucaisaas.API` 项目时，系统会通过 **EF Core Code First** 自动创建数据库，并插入部分示例数据  
-C. 数据库连接配置位于：  
+B. 首次运行 `Payslip.API` 项目时，系统会通过 **EF Core Code First** 自动创建数据库，并插入部分示例数据  
+C. 数据库连接配置位于：
 ```
-yucaisaas.API/appsettings.json
+Payslip.API/appsettings.json
 ```
 请根据本地环境修改数据库连接字符串  
-D. 同时运行 `yucaisaas.API` 和 `GenerateMonthlyyucaisaas` 项目  
-E. 可使用 Postman 或 Swagger 测试 `yucaisaas.API` 接口功能  
+D. 同时运行 `Payslip.API` 和 `GenerateMonthlyPayslip` 项目  
+E. 可使用 Postman 或 Swagger 测试 `Payslip.API` 接口功能
 
 ## 三、解决方案设计
 
 本系统遵循经典的 **SOLID 软件设计原则**，以提升可维护性与可扩展性。
 
-### 3.1 yucaisaas.API 项目说明（示例）
+### 3.1 Payslip.API 项目说明（示例）
 
-- `yucaisaas.API` 提供月薪单生成 API
+- `Payslip.API` 提供月薪单生成 API
 - 提供基于应税收入与税率类型生成薪资明细（当前支持 TaxRateType: `ResidentTaxRate=1`）
 
 #### 3.1.1 数据库设计
 
-考虑到多种税率类型的需求，系统中已定义枚举类：  
+考虑到多种税率类型的需求，系统中已定义枚举类：
 ```
-yucaisaas.API/Enums/TaxRateType.cs
+Payslip.API/Enums/TaxRateType.cs
 ```
 
 可根据不同国家或地区需求进行拓展。
 
 ---
 
-<<<<<<< HEAD
 如需更多功能支持或业务模块扩展，请提交 issue 或 pull request。欢迎贡献代码！
-=======
-如需更多功能支持或业务模块扩展，请提交 issue 或 pull request。欢迎贡献代码！
->>>>>>> yucaisaas/master
