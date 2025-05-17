@@ -1,63 +1,63 @@
-# YucaiSaaS 平台业务模块
+# YucaiSaaS Platform Business Modules
 
-本仓库包含一个 SaaS 平台的部分业务模块代码，包括 **会员管理** 和 **活动促销** 两大核心功能。
+This repository contains part of the business module code for a SaaS platform, including **Membership Management** and **Promotion Campaign** functionalities.
 
-## 一、项目介绍
+## 1. Project Overview
 
-该平台致力于为中小型企业提供灵活、高效的业务支撑服务。本仓库包括以下两个独立模块：
+This platform aims to provide flexible and efficient business support services for small and medium-sized enterprises. The repository includes the following two independent modules:
 
-- `yucaisaas-member`：会员管理模块，支持会员注册、登录、信息维护、等级管理等功能。
-- `yucaisaas-promotion`：活动促销模块，支持营销活动配置、优惠规则管理、活动投放与统计分析等功能。
+- `yucaisaas-member`: Membership management module, supporting member registration, login, profile maintenance, and membership level management.
+- `yucaisaas-promotion`: Promotion campaign module, supporting marketing campaign configuration, discount rules management, campaign launch, and analytics.
 
-## 二、开发方法
+## 2. Development Approach
 
-### 2.1 使用技术
+### 2.1 Technologies Used
 
-项目使用 [IntelliJ IDEA](https://www.jetbrains.com/idea/) 开发，采用以下主流技术：
+Developed using [IntelliJ IDEA](https://www.jetbrains.com/idea/), the project leverages the following mainstream technologies:
 
-- 后端：Spring Boot、Spring Cloud、MyBatis、MySQL、Redis
-- 前端：JavaScript、jQuery、HTML5、CSS3
-- 部署与运维：Docker、Nginx
+- Backend: Spring Boot, Spring Cloud, MyBatis, MySQL, Redis
+- Frontend: JavaScript, jQuery, HTML5, CSS3
+- Deployment & Ops: Docker, Nginx
 
-### 2.2 工程结构
+### 2.2 Project Structure
 
-- `yucaisaas-member`：会员管理模块
-- `yucaisaas-promotion`：活动促销模块
+- `yucaisaas-member`: Membership management module
+- `yucaisaas-promotion`: Promotion campaign module
 
-每个模块为独立 Spring Boot 项目，可独立部署或集成部署。
+Each module is an independent Spring Boot project and can be deployed separately or as part of an integrated system.
 
-### 2.3 运行方法（以 Payslip 示例服务为例）
+### 2.3 Running the Project (Example: Payslip Module)
 
-> ⚠️ 注意：以下为平台内的演示服务模块说明（Payslip），可作为参考测试流程。
+> ⚠️ Note: The following example describes an internal demo service (Payslip), which can serve as a reference for testing flow.
 
-A. 确保本地已安装 **Microsoft .NET 5.0 SDK**  
-B. 首次运行 `Payslip.API` 项目时，系统会通过 **EF Core Code First** 自动创建数据库，并插入部分示例数据  
-C. 数据库连接配置位于：
+A. Ensure **Microsoft .NET 5.0 SDK** is installed on your machine.  
+B. On first run, the `Payslip.API` project will automatically create the database and seed it with demo data using **EF Core Code First**.  
+C. Database connection settings can be found in:
 ```
 Payslip.API/appsettings.json
 ```
-请根据本地环境修改数据库连接字符串  
-D. 同时运行 `Payslip.API` 和 `GenerateMonthlyPayslip` 项目  
-E. 可使用 Postman 或 Swagger 测试 `Payslip.API` 接口功能
+Please adjust the connection string according to your local setup.  
+D. Run both `Payslip.API` and `GenerateMonthlyPayslip` projects simultaneously.  
+E. Test `Payslip.API` endpoints using Postman or Swagger.
 
-## 三、解决方案设计
+## 3. Solution Design
 
-本系统遵循经典的 **SOLID 软件设计原则**，以提升可维护性与可扩展性。
+This system adheres to the classic **SOLID software design principles** to enhance maintainability and scalability.
 
-### 3.1 Payslip.API 项目说明（示例）
+### 3.1 About Payslip.API (Example)
 
-- `Payslip.API` 提供月薪单生成 API
-- 提供基于应税收入与税率类型生成薪资明细（当前支持 TaxRateType: `ResidentTaxRate=1`）
+- `Payslip.API` provides API endpoints for generating monthly payslips
+- It returns a payslip based on taxable income and a specified tax rate type (currently supports `TaxRateType: ResidentTaxRate=1`).
 
-#### 3.1.1 数据库设计
+#### 3.1.1 Database Design
 
-考虑到多种税率类型的需求，系统中已定义枚举类：
+To accommodate multiple tax rate types, an enum has been defined in:
 ```
 Payslip.API/Enums/TaxRateType.cs
 ```
 
-可根据不同国家或地区需求进行拓展。
+This structure allows future extension based on different regional or national tax systems.
 
 ---
 
-如需更多功能支持或业务模块扩展，请提交 issue 或 pull request。欢迎贡献代码！
+For feature requests or module extensions, feel free to submit issues or pull requests. Contributions are welcome!
