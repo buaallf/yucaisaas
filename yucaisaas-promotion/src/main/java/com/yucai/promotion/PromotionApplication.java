@@ -1,13 +1,13 @@
-package com.yucai.member;
+package com.yucai.promotion;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class YucaisaasMemberApplication {
+public class PromotionApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(YucaisaasMemberApplication.class, args);
+        SpringApplication.run(PromotionApplication.class, args);
     }
 
 }
