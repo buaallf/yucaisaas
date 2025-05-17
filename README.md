@@ -4,7 +4,11 @@
 
 ## 一、项目介绍
 
+<<<<<<< HEAD
 本仓库包括以下两个独立模块：
+=======
+该平台致力于为中小型企业提供灵活、高效的业务支撑服务。本仓库包括以下两个独立模块：
+>>>>>>> yucaisaas/master
 
 - `yucaisaas-member`：会员管理模块，支持会员注册、登录、信息维护、等级管理等功能。
 - `yucaisaas-promotion`：活动促销模块，支持营销活动配置、优惠规则管理、活动投放与统计分析等功能。
@@ -60,4 +64,8 @@ yucaisaas.API/Enums/TaxRateType.cs
 
 ---
 
+<<<<<<< HEAD
 如需更多功能支持或业务模块扩展，请提交 issue 或 pull request。欢迎贡献代码！
+=======
+如需更多功能支持或业务模块扩展，请提交 issue 或 pull request。欢迎贡献代码！
+>>>>>>> yucaisaas/master
